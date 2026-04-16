@@ -1,4 +1,13 @@
+
+
+// prueba de ver si se comparte a traves de git
+// 4. Flujo diario:
+// •  En PC 1 o PC 2: git add . && git commit -m "cambios" && git push
+// •  En la otra PC: git pull
+
+
 import 'package:flutter/material.dart';
+
 
 void main() {
   runApp(const MyApp());
