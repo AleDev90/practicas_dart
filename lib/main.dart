@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Practicas Dart',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 58, 183, 106),
         ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter practicas'),
     );
   }
 }
@@ -67,7 +67,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
- 
 
 
   void _incrementCounter() {
@@ -77,9 +76,28 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter--;
+      _counter++;
+
+      
+
+      
+      
     });
+
+    
+
+    
   }
+
+  String mensaje(){
+    if (_counter>10){ 
+      return "has pulsado demasadas veces el boton";}
+      return "puedes seguir";
+  }
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -119,15 +137,17 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('You have pushed the button this many times:'),
+            Text(mensaje()),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _incrementCounter, 
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
