@@ -69,27 +69,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
+  // void _incrementCounter() {
+  //   setState(() {
+  //     // This call to setState tells the Flutter framework that something has
+  //     // changed in this State, which causes it to rerun the build method below
+  //     // so that the display can reflect the updated values. If we changed
+  //     // _counter without calling setState(), then the build method would not be
+  //     // called again, and so nothing would appear to happen.
       
       
-      if(_counter<= 9){
-      _counter++;
-      }      
-    });
-  }
+  //     if(_counter<= 9){
+  //     _counter++;
+  //     }      
+  //   });
+  // }
 
-  void _decrementcounter(){
-    setState((){
-      if(_counter>=0){
-      _counter--;}
-    });
-  }
+  // void _decrementcounter(){
+  //   setState((){
+  //     if(_counter>=0){
+  //     _counter--;}
+  //   });
+  // }
 
   String mensaje(){
     if (_counter>=10){ 
@@ -117,36 +117,41 @@ class _MyHomePageState extends State<MyHomePage> {
 
         
         
-        child: Row(
-          children: [
-            Expanded(child: Container(color: Colors.blue)),
-            Expanded(child: Container(color: Colors.red))
-        
-          ],
+        child:Padding(padding: EdgeInsets.all(50),
+        child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,   children: [
+          
+            Text("Ejercicios Dart",
+            style: Theme.of(context).textTheme.headlineMedium,),
+          
+            ElevatedButton(onPressed: (){}, child: Text("Boton 1")),
             
+            ElevatedButton(onPressed: (){}, child: Text("Boton 2")),
+            Text("contactanos")
+
+
+        ],),
         
-        ),
+        
 
       ),
       
-      
-      
-      
-      floatingActionButton: Column( mainAxisAlignment: MainAxisAlignment.center,
-      children:[
-        FloatingActionButton(
-        onPressed: _incrementCounter, 
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
-      const SizedBox(width:10,height: 10,),
-      FloatingActionButton(
-        onPressed: _decrementcounter,
-        tooltip: "decrement",
-        child: const Icon(Icons.remove),
-        )
-      ]
-      )
+      
+      
+      // floatingActionButton: Column( mainAxisAlignment: MainAxisAlignment.center,
+      // children:[
+      //   FloatingActionButton(
+      //   onPressed: _incrementCounter, 
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.add),
+      // ),
+      // FloatingActionButton(
+      //   onPressed: _decrementcounter,
+      //   tooltip: "decrement",
+      //   child: const Icon(Icons.remove),
+      //   )
+      // ]
+      // )
 
       
     );
