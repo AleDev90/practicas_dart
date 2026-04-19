@@ -66,7 +66,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
+  String boton1= "Botón 1";
 
 
   // void _incrementCounter() {
@@ -118,14 +118,24 @@ class _MyHomePageState extends State<MyHomePage> {
         
         
         child:Padding(padding: EdgeInsets.all(50),
-        child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,   children: [
+        child: Column(mainAxisAlignment: MainAxisAlignment.center,   children: [
           
             Text("Ejercicios Dart",
             style: Theme.of(context).textTheme.headlineMedium,),
+
+            SizedBox(height: 30,),
           
-            ElevatedButton(onPressed: (){}, child: Text("Boton 1")),
+            ElevatedButton(onPressed: (){
+              setState(() {
+              boton1="Has pulsado en el boton";
+              });
+            }, 
             
+            
+            child: Text(boton1)),
+            SizedBox(height: 30,),
             ElevatedButton(onPressed: (){}, child: Text("Boton 2")),
+            Spacer(),
             Text("contactanos")
 
 
