@@ -7,6 +7,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 
 void main() {
@@ -68,6 +69,15 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   String boton1= "Botón 1";
 
+  Color colorPulsando = Colors.amberAccent;
+
+  Color colorSinPulsar = Colors.red;
+
+  List<Color> colores= [Colors.amberAccent,Colors.red,Colors.white];
+
+  var random = Random();
+  int numeroColores = 0;
+
 
   // void _incrementCounter() {
   //   setState(() {
@@ -107,6 +117,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      backgroundColor: colorSinPulsar,
+      
+      
+      
       appBar: AppBar(
         
         backgroundColor: Colors.red,
@@ -133,8 +148,16 @@ class _MyHomePageState extends State<MyHomePage> {
             
             
             child: Text(boton1)),
-            SizedBox(height: 30,),
-            ElevatedButton(onPressed: (){}, child: Text("Boton 2")),
+
+            SizedBox(height: 30,), //espacio
+
+            ElevatedButton(onPressed: (){
+              setState(() {
+                numeroColores= random.nextInt(3);
+                colorSinPulsar= colores[numeroColores];
+                
+              });
+            }, child: Text("Boton 2")),
             Spacer(),
             Text("contactanos")
 
