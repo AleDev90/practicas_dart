@@ -75,6 +75,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Color> colores= [Colors.amberAccent,Colors.red,Colors.white];
 
+  String estadoColor = "";
+
   var random = Random();
   int numeroColores = 0;
 
@@ -135,10 +137,17 @@ class _MyHomePageState extends State<MyHomePage> {
         child:Padding(padding: EdgeInsets.all(50),
         child: Column(mainAxisAlignment: MainAxisAlignment.center,   children: [
           
+          
             Text("Ejercicios Dart",
             style: Theme.of(context).textTheme.headlineMedium,),
 
             SizedBox(height: 30,),
+
+            Text(estadoColor),
+
+            SizedBox(height: 30,),
+
+
           
             ElevatedButton(onPressed: (){
               setState(() {
@@ -153,11 +162,31 @@ class _MyHomePageState extends State<MyHomePage> {
 
             ElevatedButton(onPressed: (){
               setState(() {
-                numeroColores= random.nextInt(3);
-                colorSinPulsar= colores[numeroColores];
+                // numeroColores= random.nextInt(3);
+                // colorSinPulsar= colores[numeroColores];
+                Color nuevoColor;
+                do{
+                  nuevoColor = colores[Random().nextInt(colores.length)];
+                } while(nuevoColor == colorSinPulsar);
+                colorSinPulsar= nuevoColor;
+
+                estadoColor="Color: ${colorSinPulsar.toString()}";
                 
               });
             }, child: Text("Boton 2")),
+
+            SizedBox(height: 30,),
+
+            ElevatedButton(onPressed:(){
+                setState(() {
+                  
+                
+                colorSinPulsar=Colors.red;
+                estadoColor="";
+                boton1="Boton 1";
+              });
+            }, child: Text("Reset")),
+
             Spacer(),
             Text("contactanos")
 
